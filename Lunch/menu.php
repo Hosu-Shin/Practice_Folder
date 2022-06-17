@@ -1,38 +1,12 @@
 <?php
-    include_once ("db.php");
+    include_once("db.php");
 
-    $insMenu = $_POST['menu'];
-
-    $param = [
-        "menu" => $insMenu
-    ];
-
-    print_r ($param);
-
-
-    function ins_menu(&$param) {
-        $menu = $param["menu"];
-        $sql = "INSERT INTO menu
-                (`menu`)
-                VALUES
-                ('$menu')
-        ";
-        $conn = get_conn();
-        $result = mysqli_query($conn, $sql);
-        mysqli_close($conn);
-
-        return $result;
-    }
-
-    $result = ins_menu($param);
-
-//---------------------------------------
-
-    function sel_lunch() {
-        $sql = 
-        "   SELECT menu, menuId
-            FROM menu
-        ";
+    function sel_lunch()
+    {
+        $sql =
+            "   SELECT menu, menuId
+                FROM menu
+            ";
         $conn = get_conn();
         $result = mysqli_query($conn, $sql);
         mysqli_close($conn);
@@ -40,24 +14,19 @@
     }
 
     $arr = sel_lunch();
-    
+
     $rs_arr = [];
-    while($row = mysqli_fetch_assoc($arr)) {
+    while ($row = mysqli_fetch_assoc($arr)) {
         $rs_arr[] = $row['menu'];
         $menuId = $row['menuId'];
         $menu = $row['menu'];
-
     }
-    // $randomMenu = $rs_arr[rand(0, count($rs_arr)-1)];
-   
-    //print $rs_arr[rand(0, count($rs_arr)-1)] ."<br>";
+
     function clickM2() {
         global $rs_arr;
         $divarr =  implode(',', $rs_arr);
         return $divarr;
     }
-
-    //print clickM2();
 
 ?>
 
@@ -70,16 +39,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lunch_Menu</title>
     <style>
-        h3 {
-            color: blue;
-        }
+        h3 { color: blue; }
     </style>
 </head>
 
 <body>
     <h1>오늘의 점심</h1>
     <div>
-        <form action="#" method="post">    
+        <form action="menu_proc.php" method="post">    
             <input type = "text" name = "menu">
             <input type = "submit" value="메뉴 등록하기" class = "">
         </form>
@@ -94,10 +61,9 @@
         
         function clickMe() {
             let result = "<?= clickM2(); ?>";
-            //console.log(result);
             const menuArr = result.split(',');
-
             let printMenu = menuArr[Math.floor(Math.random()*menuArr.length-1)];
+            
             if(printMenu){
                 selDiv.appendChild(h3);
                 h3.innerText = printMenu;
