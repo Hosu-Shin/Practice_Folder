@@ -1,11 +1,18 @@
+/* 참고 : https://codepen.io/skullface/pen/pKjrqj */
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
 .joke {
     width: 100%;
-    min-height: 200px;
+    min-height: 50px;
 }
 details {
     text-align: center;
-    color: rgb(0, 0, 0);
-    font-size: 100%;
+    color: rgb(0, 150, 130);
+    font-size: 120%;
     overflow: none;
 }
 summary {
@@ -18,12 +25,15 @@ summary {
     margin-right: auto;
 }
 details[open] summary {
-    color: rgb(0, 150, 130);
-    opacity: 0.8;
+    color: rgb(0, 150, 130, 0.6);
+    /* opacity: 0.8; */
     animation-name: fadeOut;
     animation-duration: 150ms;
 }
 details span {
     display: inline-block;
     margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: rgb(44, 44, 44);
+    font-size: 80%;
 } 
