@@ -50,5 +50,5 @@
             alert("이미 등록된 메뉴입니다.");
             location.assign("menu.php");
         </script>
-<?php    } 
+<?php   } 
 ?>
