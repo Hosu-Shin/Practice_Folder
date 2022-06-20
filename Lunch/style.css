@@ -1,8 +1,16 @@
+@font-face {
+    font-family: 'HallymGothic-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2204@1.0/HallymGothic-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
 /* 참고 : https://codepen.io/skullface/pen/pKjrqj */
 html {
     box-sizing: border-box;
 }
 *, *:before, *:after {
+    font-family: 'HallymGothic-Regular';
     box-sizing: inherit;
 }
 .joke {
@@ -12,7 +20,7 @@ html {
 details {
     text-align: center;
     color: rgb(0, 150, 130);
-    font-size: 120%;
+    font-size: 100%;
     overflow: none;
 }
 summary {
@@ -36,4 +44,46 @@ details span {
     margin-bottom: 1rem;
     color: rgb(44, 44, 44);
     font-size: 80%;
-} 
+}
+
+
+.button {
+  align-self: center;
+  background-color: #fff;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Neucha', sans-serif;
+  font-size: 1rem;
+  line-height: 18px;
+  outline: none;
+  padding: .75rem;
+  text-decoration: none;
+  letter-spacing: 3px;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button:hover {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+.button:focus {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+}
