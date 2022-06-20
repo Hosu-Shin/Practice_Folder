@@ -31,12 +31,21 @@ while ($row = mysqli_fetch_assoc($arr)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CheckBox</title>
     <link href="style.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
+        @font-face {
+            font-family: 'EarlyFontDiary';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EarlyFontDiary.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
 </head>
 
 <body>
     <div class="joke">
         <details style="cursor:pointer">
-            <summary class="setup">메뉴 펼쳐보기</summary>
+            <summary class="setup" style="font-family: 'EarlyFontDiary'; font-size: 24px;">메뉴 펼쳐보기</summary>
             <span class="punchline">
                 <form id="Lunch" action="checkBox_proc.php" method="post">
                     <?php
@@ -49,7 +58,7 @@ while ($row = mysqli_fetch_assoc($arr)) {
             </span>
         </details>
     </div>
-    <button onclick='checked()'>확인</button>
+    <button onclick='checked()' class="button" style="font-family: Neucha, sans-serif;">Click🍭</button>
     <div id='result'></div>
 
     <script>
