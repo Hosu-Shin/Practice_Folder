@@ -33,6 +33,7 @@ while ($row = mysqli_fetch_assoc($arr)) {
     <link href="style.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
+
         @font-face {
             font-family: 'EarlyFontDiary';
             src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EarlyFontDiary.woff2') format('woff2');
@@ -68,12 +69,21 @@ while ($row = mysqli_fetch_assoc($arr)) {
             let selectedEls = document.querySelectorAll(query);
 
             let result = '';
-            selectedEls.forEach((el) => {
-                result += el.value + ' ';
-            });
-            console.log(result);
+            selectedEls.forEach((el, idx) => {
 
-            document.getElementById('result').innerText = result;
+                if (idx !== selectedEls.length - 1) {
+                    result += el.value + ',';
+                } else {
+                    result += el.value;
+                }
+            });
+
+            const arr1 = result.split(",");
+
+            let randomMenu = arr1[Math.floor(Math.random() * arr1.length)];
+
+            document.getElementById('result').innerText = randomMenu;
+
         }
     </script>
 </body>
