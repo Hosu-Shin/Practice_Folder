@@ -51,9 +51,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <title>Lunch_Menu</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <style>
-        h3 {
-            color: blue;
+        @import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
+
+        @font-face {
+            font-family: 'EarlyFontDiary';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EarlyFontDiary.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
         }
     </style>
 </head>
@@ -66,7 +72,7 @@
             <input type="submit" value="메뉴 등록하기" class="">
         </form>
     </div>
-    <button id="my_lunch" onclick="clickMe();">눌러 눌러</button>
+    <button id="my_lunch" class="button" onclick="clickMe();" style="font-family: Neucha, sans-serif;">Click🍭</button>
     <div id="print"></div>
     <div>© My_Lunch🍚</div>
 
