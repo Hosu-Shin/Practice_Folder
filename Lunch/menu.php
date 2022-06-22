@@ -1,22 +1,8 @@
 <?php
-    include_once("db.php");
+    include_once("db/db.php");
+    include_once("db/dbMenu.php");
 
-
-//DB에 저장된 음식 메뉴 가져오는 함수
-    function sel_lunch()
-    {
-        $sql =
-            "   SELECT menu, menuId
-                FROM menu
-            ";
-        $conn = get_conn();
-        $result = mysqli_query($conn, $sql);
-        mysqli_close($conn);
-        return $result;
-    }
-
-    $arr = sel_lunch();
-
+    $arr = sel_all_lunch();
 
 //메뉴 배열로 만들기
     $rs_arr = [];
@@ -25,6 +11,8 @@
         $menuId = $row['menuId'];
         $menu = $row['menu'];
     }
+
+    //print_r ($rs_arr);
 
     // $randomMenu = $rs_arr[rand(0, count($rs_arr)-1)];
     //print $rs_arr[rand(0, count($rs_arr)-1)] ."<br>";
@@ -91,7 +79,7 @@
         //undefined 안 뜨게 만들기
             if (printMenu) {
                 selDiv.appendChild(h3);
-                //h3.innerText = printMenu;
+                h3.innerText = printMenu;
                 Swal.fire({
                     title: printMenu,
                     width: 600,
