@@ -1,19 +1,8 @@
 <?php
-include_once("db.php");
 
-function sel_lunch()
-{
-    $sql =
-        "   SELECT menu, menuId
-                FROM menu
-            ";
-    $conn = get_conn();
-    $result = mysqli_query($conn, $sql);
-    mysqli_close($conn);
-    return $result;
-}
+include_once("db/dbMenu.php");
 
-$arr = sel_lunch();
+$arr = sel_all_lunch();
 
 $rs_arr = [];
 while ($row = mysqli_fetch_assoc($arr)) {
@@ -21,7 +10,9 @@ while ($row = mysqli_fetch_assoc($arr)) {
     $menuId = $row['menuId'];
     $menu = $row['menu'];
 }
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
