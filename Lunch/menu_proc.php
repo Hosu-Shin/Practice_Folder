@@ -1,42 +1,15 @@
 <?php
-    include_once ("db.php");
+    include_once ("db/dbMenu.php");
 
     $insMenu = $_POST["menu"];
 
     $param = [
         "menu" => $insMenu
     ];
+    
+    $all_sel = sel_all_lunch();
 
-    function ins_menu(&$param) {
-        $menu = $param["menu"];
-        $sql = "INSERT INTO menu
-                (`menu`)
-                VALUES
-                ('$menu')
-        ";
-        $conn = get_conn();
-        $result = mysqli_query($conn, $sql);
-        mysqli_close($conn);
-
-        return $result;
-    }
-
-    function sel_lunch(&$param)
-    {
-        $menu = $param["menu"];
-        $sql =
-            "   SELECT menu
-                FROM menu
-                WHERE menu = '$menu';
-            ";
-        $conn = get_conn();
-        $result = mysqli_query($conn, $sql);
-        mysqli_close($conn);
-        return mysqli_fetch_assoc($result);
-    }
-
-    $sel = sel_lunch($param);
-    if(empty($sel)) {
+    if($insMenu !== '' && !empty($sel)) {
         $result = ins_menu($param);
         ?>
         <script>
@@ -44,7 +17,12 @@
             location.assign("menu.php");
         </script>
         <?php
-    } else {
+    } else if($insMenu == " ") { ?>
+        <script>
+            alert("내용을 입력해 주세요");
+            location.assign("menu.php");
+        </script>
+<?php } else {
         ?>
         <script>
             alert("이미 등록된 메뉴입니다.");
