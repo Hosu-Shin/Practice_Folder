@@ -3,25 +3,28 @@
 
     $insMenu = $_POST["menu"];
 
+//울고 싶은 공백 처리
+    $insMenu = preg_replace("/\s+/", "", $insMenu);
+    if(empty($insMenu)) { ?>
+        <script>
+            alert("내용을 입력해 주세요");
+            location.assign("menu.php");
+        </script>
+<?php } 
+
     $param = [
         "menu" => $insMenu
     ];
 
-    $empty = preg_replace("/\s+/", "", $insMenu);
     
-    $all_sel = sel_all_lunch();
+    $sel = sel_lunch($param);
+    
 
-    if($insMenu !== '' && !empty($sel)) {
+    if($insMenu !== '' && empty($sel['menu'])) {
         $result = ins_menu($param);
         ?>
         <script>
             alert("<?=$insMenu?>이(가) 등록되었습니다.");
-            location.assign("menu.php");
-        </script>
-        <?php
-    } else if(empty($empty)) { ?>
-        <script>
-            alert("내용을 입력해 주세요");
             location.assign("menu.php");
         </script>
 <?php } else {
