@@ -1,0 +1,132 @@
+{
+    "editor.mouseWheelZoom": true,
+    "liveServer.settings.CustomBrowser": "chrome",
+    "tabnine.experimentalAutoImports": true,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": "active",
+    
+    "editor.tokenColorCustomizations": {
+        //"comments": "#608c9b"
+        "comments": "#dccbed",
+        //"comments": "#607D9B"
+        "textMateRules": [
+            {
+              "scope": [
+                  "constant.language",
+                  "punctuation.definition.constant",
+                  "variable.other.constant",
+              ],
+              "settings": {
+                  "foreground": "#d6d6d6",
+              },
+            },
+            {
+                "scope": [
+                    "punctuation.definition.variable.php",
+                    "variable.other.php",
+                    "variable.other.property.php"
+                ],
+                "settings": {
+                    "foreground": "#6dd1ff"
+                },
+            },
+            {
+                "scope": [
+                    "punctuation.definition.variable.php",
+                    "punctuation.section.embedded.begin.php",
+                    "punctuation.section.embedded.end.php"
+                ],
+                "settings": {
+                    "foreground": "#9f64ff"
+                },
+            },
+            {
+                "scope": [
+                    "variable.language"
+                ],
+                "settings": {
+                    "foreground": "#6dd1ff"
+                },
+            },
+            {
+                "scope": [
+                    "storage.modifier.php"
+                ],
+                "settings": {
+                    "foreground": "#C5E478"
+                },
+            },
+            {
+                "scope": [
+                    "keyword.other.namespace.php",
+                    "support.function.php_spl.php"
+                ],
+                "settings": {
+                    "foreground": "#e487b5"
+                },
+            },
+            {
+                "scope": [
+                    "entity.name.function.php"
+                ],
+                "settings": {
+                    "foreground": "#ff71bd"
+                },
+            },
+            {
+                "scope": [
+                    "comment.line.double-slash.php",
+                    "comment.line.double-slash.js"
+                ],
+                "settings": {
+                    "foreground": "#dccbed"
+                },
+            }
+          ]
+    },
+    "editor.semanticTokenColorCustomizations": {
+        // "[Default Dark+]": {
+            "rules": {
+                "variable": "#e6ff57",
+                "variable.defaultLibrary": "#e487b5",
+                "variable.readonly": "#51a3c4"
+            }
+        //  }
+    },
+    
+    "indentRainbow.errorColor": "(128,32,32.6)",
+    "indentRainbow.indicatorStyle": "light",
+    "indentRainbow.lightIndicatorStyleLineWidth": 1,
+    "indentRainbow.colors": [
+        "rgba(255,255,64,0.3)",
+        "rgba(127,255,127,0.3)",
+        "rgba(255,127,255,0.3)",
+        "rgba(79,236,236,0.3)"
+    ],
+
+    "workbench.colorCustomizations": {
+        /*BracketHighlight */
+        "editorBracketHighlight.foreground1": "#c172d9",
+        "editorBracketHighlight.foreground2": "#4fb1bc",
+        "editorBracketHighlight.foreground3": "#dfb976",
+        "editorBracketHighlight.foreground4": "#5caeef",
+        "editorBracketHighlight.foreground5": "#97c26c",
+        "editorBracketHighlight.foreground6": "#20458f",
+        "editorBracketHighlight.unexpectedBracket.foreground": "#db6165",
+        "editor.foreground": "#fde71c",
+        "editorLineNumber.foreground" : "#fde71c",
+        
+    },
+    "workbench.iconTheme": "material-icon-theme",
+    "powermode.presets": "simple-rift",
+    "material-icon-theme.files.associations": {
+        "*.Php": "php_elephant_pink",
+    },
+    "material-icon-theme.folders.color": "#9bd1dd",
+    
+    "workbench.colorTheme": "Night Owl",
+    "[php]": {
+        "diffEditor.codeLens": true,
+    },
+    //"#90a4ae"
+}
